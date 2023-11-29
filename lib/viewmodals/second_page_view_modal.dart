@@ -52,9 +52,6 @@ class SecondPageViewModal extends ChangeNotifier {
   }
 
   deleteLocationContainer(int index) async {
-    print(
-        '--------------------------****-------------------${boxLocations.length}');
-
     ///id olmadığı için böyle yaptım
     weatherModelList.removeAt(index);
     boxLocations.clear();
@@ -66,8 +63,6 @@ class SecondPageViewModal extends ChangeNotifier {
               lat: weatherModelList[i].data![0].lat!,
               lon: weatherModelList[i].data![0].lon!));
     }
-    print(
-        '--------------------------****-------------------${boxLocations.length}');
     notifyListeners();
   }
 }

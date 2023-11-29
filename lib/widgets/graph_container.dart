@@ -1,8 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:theweather/consts/colors.dart';
 import 'package:theweather/functions/functions.dart';
-
 import 'package:theweather/models/hourly_weather_model.dart';
 
 class GraphContainer extends StatelessWidget {
@@ -43,7 +41,7 @@ class GraphContainer extends StatelessWidget {
                   handleBuiltInTouches: true,
                 ),
                 borderData: FlBorderData(show: false),
-                titlesData: FlTitlesData(show: false),
+                titlesData: const FlTitlesData(show: false),
                 lineBarsData: [
                   LineChartBarData(
                     spots: [

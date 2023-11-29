@@ -95,14 +95,4 @@ class DailyWeatherWidget extends StatelessWidget {
     );
   }
 
-/*  Future<dynamic> modalBottomSheet(BuildContext context, Color contColor) {
-    return showModalBottomSheet(
-        backgroundColor: Colors.transparent,
-        isScrollControlled: true,
-        shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(top: Radius.circular(25))),
-        context: context,
-        builder: (context) => MyDraggableScrollableSheet(
-            fiveDaysModal: fiveDaysModal, contColor: contColor, index: index));
-  }*/
 }

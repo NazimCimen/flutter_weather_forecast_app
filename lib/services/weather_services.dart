@@ -14,13 +14,11 @@ class WeatherServices {
     if (response.statusCode == 200) {
       if (response.data is Map) {
         currentWeatherModel = CurrentWeatherModel.fromJson(response.data);
-        //_weatherModel = WeatherModel.fromJson(response.data);
         return currentWeatherModel;
       }
     }
   }
 
-//https://api.weatherbit.io/v2.0/forecast/daily?lat=37.991585&lon=32.6006583&key=c64c0ff3b6734bd9bb0044dfccd2ac21
   DailyWeatherModel dailyWeatherItems = DailyWeatherModel();
 
   Future<DailyWeatherModel?> getDailyWeather(

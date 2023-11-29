@@ -15,14 +15,8 @@ class LoadingPage extends StatefulWidget {
 }
 
 late LocationPermissionService _locationService;
-
-//late final WeatherService _weatherService;
-//late WeatherModel? _weatherModel;
 late final WeatherServices _currentWeatherService;
 late CurrentWeatherModel? _currentWeatherModel;
-
-//late FiveDaysModal? _fiveDaysModal;
-//late final DailyHourlyWeatherService _dailyHourlyWeatherService;
 late DailyWeatherModel? _dailyWeatherModel;
 
 class _LoadingPageState extends State<LoadingPage> {
@@ -40,15 +34,12 @@ class _LoadingPageState extends State<LoadingPage> {
     );
   }
 
-//bu fonksiyonun ismini değiştir.
-  Future<void> getLocation() async {
+  Future<void> getLocationAndPrepareDatas() async {
     await _locationService.getCurrentLocation();
     if (_locationService.latitude == null &&
         _locationService.longitude == null) {
       print('konum bilgileri gelmiyor');
     } else {
-      /*Provider.of<SecondPageViewModal>(context, listen: false)
-          .weatherModelList = boxLocations.values.toList();*/
       _currentWeatherModel = (await _currentWeatherService.getCurrentWeather(
           _locationService.latitude, _locationService.longitude));
       _dailyWeatherModel = await _currentWeatherService.getDailyWeather(
@@ -63,12 +54,9 @@ class _LoadingPageState extends State<LoadingPage> {
   void initState() {
     super.initState();
     _locationService = LocationPermissionService();
-    //_weatherService = WeatherService();
     _currentWeatherService = WeatherServices();
-    //  _fiveDaysModal = FiveDaysModal();
-    // _dailyHourlyWeatherService = DailyHourlyWeatherService();
     _dailyWeatherModel = DailyWeatherModel();
-    getLocation();
+    getLocationAndPrepareDatas();
   }
 
   @override

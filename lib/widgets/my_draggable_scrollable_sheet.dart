@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:theweather/consts/colors.dart';
 import 'package:theweather/functions/functions.dart';
 import 'package:theweather/consts/styles.dart';
 import 'package:theweather/models/hourly_weather_model.dart';
