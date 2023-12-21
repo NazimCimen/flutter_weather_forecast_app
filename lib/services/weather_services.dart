@@ -2,15 +2,16 @@ import 'package:dio/dio.dart';
 import 'package:theweather/models/current_weather_model.dart';
 import 'package:theweather/models/daily_weather_model.dart';
 import 'package:theweather/models/hourly_weather_model.dart';
+import 'package:theweather/utlity/consts/api_constants.dart';
 
 class WeatherServices {
-  Dio _networkmanager = Dio();
+ final Dio _networkmanager = Dio(BaseOptions(baseUrl:ApiConstants.getBaseUrl()));
   CurrentWeatherModel currentWeatherModel = CurrentWeatherModel();
 
   Future<CurrentWeatherModel?> getCurrentWeather(
       double? latitude, double? longitude) async {
-    final response = await _networkmanager.get(
-        'https://api.weatherbit.io/v2.0/current?lat=$latitude&lon=$longitude&key=c64c0ff3b6734bd9bb0044dfccd2ac21');
+    final response = await _networkmanager.get(ApiConstants.getCurrentRequest(latitude, longitude)
+        );
     if (response.statusCode == 200) {
       if (response.data is Map) {
         currentWeatherModel = CurrentWeatherModel.fromJson(response.data);
@@ -23,8 +24,8 @@ class WeatherServices {
 
   Future<DailyWeatherModel?> getDailyWeather(
       double? latitude, double? longitude) async {
-    final response = await _networkmanager.get(
-        'https://api.weatherbit.io/v2.0/forecast/daily?lat=$latitude&lon=$longitude&key=c64c0ff3b6734bd9bb0044dfccd2ac21');
+    final response = await _networkmanager.get(ApiConstants.getDailyRequest(latitude, longitude)
+       );
     if (response.statusCode == 200) {
       if (response.data is Map) {
         dailyWeatherItems = DailyWeatherModel.fromJson(response.data);
@@ -41,7 +42,7 @@ class WeatherServices {
   Future<HourlyWeatherModel?> getHourlyWeather(
       double? latitude, double? longitude) async {
     final response = await _networkmanager.get(
-        'https://api.weatherbit.io/v2.0/forecast/hourly?lat=$latitude&lon=$longitude&key=c64c0ff3b6734bd9bb0044dfccd2ac21&hours=200');
+        ApiConstants.getHourlyRequest(latitude, longitude));
     if (response.statusCode == 200) {
       if (response.data is Map) {
         hourlyWeatherItems = HourlyWeatherModel.fromJson(response.data);

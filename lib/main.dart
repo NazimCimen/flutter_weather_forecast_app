@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:provider/provider.dart';
-import 'package:theweather/consts/boxes.dart';
-import 'package:theweather/consts/colors.dart';
-import 'package:theweather/consts/styles.dart';
+import 'package:theweather/utlity/consts/boxes.dart';
+import 'package:theweather/utlity/consts/colors.dart';
+import 'package:theweather/utlity/consts/styles.dart';
 import 'package:theweather/hive_database/locations.dart';
 import 'package:theweather/loading_page.dart';
 import 'package:theweather/viewmodals/first_page_view_modal.dart';

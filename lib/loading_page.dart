@@ -22,7 +22,7 @@ late DailyWeatherModel? _dailyWeatherModel;
 class _LoadingPageState extends State<LoadingPage> {
   void anasayfayagec(CurrentWeatherModel? currentWeatherModel,
       DailyWeatherModel? _dailyWeatherModel) async {
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 2));
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(builder: (context) {

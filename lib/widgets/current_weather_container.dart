@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:theweather/consts/colors.dart';
-import 'package:theweather/consts/styles.dart';
+import 'package:theweather/utlity/consts/colors.dart';
+import 'package:theweather/utlity/consts/styles.dart';
 import 'package:theweather/models/current_weather_model.dart';
 import 'package:theweather/viewmodals/first_page_view_modal.dart';
 import 'package:theweather/widgets/my_draggable_scrollable_sheet.dart';
@@ -14,8 +14,6 @@ class CurrentWeatherContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.5,
-      width: MediaQuery.of(context).size.width * 1.0,
       decoration: const BoxDecoration(
         color: Colors.purple,
         borderRadius: BorderRadius.only(

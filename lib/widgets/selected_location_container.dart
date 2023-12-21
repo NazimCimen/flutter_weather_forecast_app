@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:theweather/consts/colors.dart';
-import 'package:theweather/consts/styles.dart';
+import 'package:theweather/utlity/consts/colors.dart';
+import 'package:theweather/utlity/consts/styles.dart';
+import 'package:theweather/utlity/extensions/size_extensions.dart';
 import 'package:theweather/viewmodals/second_page_view_modal.dart';
 import 'package:theweather/viewmodals/third_page_view_modal.dart';
 import 'package:theweather/views/third_page_view.dart';
@@ -13,7 +14,7 @@ class SelectedLocationContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.20,
+      height: context.dynamicHeight(0.2),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: Colors.purple,

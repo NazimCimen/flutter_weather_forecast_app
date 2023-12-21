@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:theweather/consts/colors.dart';
-import 'package:theweather/consts/controllers.dart';
-import 'package:theweather/consts/styles.dart';
+import 'package:theweather/utlity/consts/colors.dart';
+import 'package:theweather/utlity/consts/controllers.dart';
+import 'package:theweather/utlity/consts/styles.dart';
+import 'package:theweather/utlity/extensions/size_extensions.dart';
 import 'package:theweather/viewmodals/second_page_view_modal.dart';
 import 'package:theweather/widgets/selected_location_container.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -47,14 +48,14 @@ class _SecondPageViewState extends State<SecondPageView> {
       body: ListView.builder(
         itemCount: context.watch<SecondPageViewModal>().weatherModelList.length,
         itemBuilder: (context, index) => Padding(
+          //paddingi düzenle
           padding: const EdgeInsets.all(16.0),
           child: Slidable(
             endActionPane: ActionPane(motion: BehindMotion(), children: [
               Center(
                 child: IconButton(
                     onPressed: () {
-                     
-                        context
+                      context
                           .read<SecondPageViewModal>()
                           .deleteLocationContainer(index);
                     },
@@ -94,8 +95,8 @@ class _SecondPageViewState extends State<SecondPageView> {
           ),
         ),
         content: Container(
-          width: MediaQuery.of(context).size.width * 0.40,
-          height: MediaQuery.of(context).size.height * 0.3,
+          width: context.dynamicWidht(0.4),
+          height: context.dynamicHeight(0.3),
           decoration: BoxDecoration(
               border: Border.all(color: myBlack),
               borderRadius: BorderRadius.circular(25)),
@@ -104,8 +105,8 @@ class _SecondPageViewState extends State<SecondPageView> {
             child: ListView.builder(
               itemCount: context.watch<SecondPageViewModal>().items?.length,
               itemBuilder: (context, index) => GestureDetector(
-                onTap: () async{
-                await  context.read<SecondPageViewModal>().getCurrentWeather(
+                onTap: () async {
+                  await context.read<SecondPageViewModal>().getCurrentWeather(
                       //bu satırlardaki nulll kontrolünü sağla
                       Provider.of<SecondPageViewModal>(context, listen: false)
                           .items![index]

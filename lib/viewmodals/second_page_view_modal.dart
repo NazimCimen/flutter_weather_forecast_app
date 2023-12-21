@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
-import 'package:theweather/consts/boxes.dart';
-import 'package:theweather/functions/functions.dart';
+import 'package:theweather/utlity/consts/boxes.dart';
+import 'package:theweather/utlity/functions/functions.dart';
 import 'package:theweather/hive_database/locations.dart';
 import 'package:theweather/models/current_weather_model.dart';
 import 'package:theweather/models/selected_location_model.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:theweather/functions/functions.dart';
-import 'package:theweather/consts/styles.dart';
+import 'package:theweather/utlity/functions/functions.dart';
+import 'package:theweather/utlity/consts/styles.dart';
 import 'package:theweather/models/current_weather_model.dart';
 import 'package:theweather/models/daily_weather_model.dart';
 import 'package:theweather/viewmodals/first_page_view_modal.dart';

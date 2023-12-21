@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:theweather/functions/functions.dart';
-import 'package:theweather/consts/styles.dart';
+import 'package:theweather/utlity/functions/functions.dart';
+import 'package:theweather/utlity/consts/styles.dart';
 import 'package:theweather/models/hourly_weather_model.dart';
 
 class HourlyWeatherContainer extends StatelessWidget {

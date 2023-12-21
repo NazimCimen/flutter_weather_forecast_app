@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:theweather/consts/colors.dart';
-import 'package:theweather/consts/styles.dart';
+import 'package:theweather/utlity/consts/colors.dart';
+import 'package:theweather/utlity/consts/styles.dart';
 import 'package:theweather/models/current_weather_model.dart';
 import 'package:theweather/models/daily_weather_model.dart';
+import 'package:theweather/utlity/extensions/size_extensions.dart';
 import 'package:theweather/widgets/daily_weather_container.dart';
 import 'package:theweather/widgets/current_weather_container.dart';
 
@@ -30,10 +31,10 @@ class ThirdPageView extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.03,
+              height: context.dynamicHeight(0.03),
             ),
             SizedBox(
-                height: MediaQuery.of(context).size.height * 0.05,
+                height: context.dynamicHeight(0.05),
                 child: Row(
                   children: [
                     Text(' Next 6 Days/Hourly  ',
@@ -45,10 +46,9 @@ class ThirdPageView extends StatelessWidget {
                   ],
                 )),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.02,
-            ),
+ height:context.dynamicHeight(0.02)           ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.25,
+              height:context.dynamicHeight(0.25),
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: 6,
